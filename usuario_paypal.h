@@ -15,18 +15,18 @@ private:
     vector<string> historialCuenta;
 
 public:
-    UsuarioPaypal(std::string nombreUsuario, std::string numeroIdentidad, std::string contrasena);
+    UsuarioPaypal(string nombreUsuario, string numeroIdentidad, string contrasena);
 
     string GetNombreUsuario();
     string GetNumeroIdentidad();
     string GetContrasena();
     float GetSaldo();
 
-    void Depositar(float cantidad);
-    void Retirar(float cantidad);
+    void Depositar(float);
+    void Retirar(float);
     void MostrarHistorialCuenta();
     void GuardarEnArchivo();
 };
 
-#endif // USUARIO_PAYPAL_H
+#endif
 
