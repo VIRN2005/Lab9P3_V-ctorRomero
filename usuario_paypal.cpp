@@ -2,6 +2,9 @@
 #include "AdministradoraArchivos.h"
 using namespace std;
 
+UsuarioPaypal::UsuarioPaypal() {
+}
+
 UsuarioPaypal::UsuarioPaypal(string nombreUsuario, string numeroIdentidad, string contrasena) {
     this->nombreUsuario = nombreUsuario;
     this->numeroIdentidad = numeroIdentidad;

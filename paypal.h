@@ -14,6 +14,7 @@ public:
     void CrearCuenta();
     UsuarioPaypal* IniciarSesion();
     void CargarInformacion();
+    void AgregarUsuario(UsuarioPaypal* usuario);
 };
 
 #endif

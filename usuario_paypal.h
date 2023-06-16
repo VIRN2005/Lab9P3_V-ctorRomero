@@ -15,6 +15,7 @@ private:
     vector<string> historialCuenta;
 
 public:
+    UsuarioPaypal();
     UsuarioPaypal(string nombreUsuario, string numeroIdentidad, string contrasena);
 
     string GetNombreUsuario();

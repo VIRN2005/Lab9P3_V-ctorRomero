@@ -40,7 +40,13 @@ UsuarioPaypal* Paypal::IniciarSesion() {
 }
 
 void Paypal::CargarInformacion() {
-    usuarios_PayPal = AdministradoraArchivos::CargarInformacion();
+    vector<UsuarioPaypal*> usuarios = AdministradoraArchivos::CargarInformacion();
+    usuarios_PayPal = usuarios;
+}
+
+
+void Paypal::AgregarUsuario(UsuarioPaypal* usuario) {
+    usuarios_PayPal.push_back(usuario);
 }
 
 

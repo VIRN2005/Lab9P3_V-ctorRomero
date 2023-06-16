@@ -8,7 +8,7 @@ using namespace std;
 class AdministradoraArchivos {
 public:
     static void GuardarUsuarioPaypal(UsuarioPaypal* usuario);
-    static void CargarInformacion(Paypal* paypal);
+    static vector<UsuarioPaypal*> CargarInformacion();
     static bool ExisteUsuario(string nombreUsuario);
 };
 
