@@ -1,5 +1,5 @@
 #include "paypal.h"
-#include "administradora_archivos.h"
+#include "AdministradoraArchivos.h"
 using namespace std;
 
 void Paypal::CrearCuenta() {
@@ -40,7 +40,13 @@ UsuarioPaypal* Paypal::IniciarSesion() {
 }
 
 void Paypal::CargarInformacion() {
-    usuarios_PayPal = AdministradoraArchivos::CargarUsuariosPaypal();
+    usuarios_PayPal = AdministradoraArchivos::CargarInformacion();
 }
+
+
+
+
+
+
 
 

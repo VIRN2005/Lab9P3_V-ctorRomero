@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdministradoraArchivos.cpp" />
     <ClCompile Include="Lab9P3_VíctorRomero.cpp" />
     <ClCompile Include="paypal.cpp" />
     <ClCompile Include="usuario_paypal.cpp" />
     <ClCompile Include="Wallet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdministradoraArchivos.h" />
     <ClInclude Include="paypal.h" />
     <ClInclude Include="usuario_paypal.h" />
     <ClInclude Include="Wallet.h" />

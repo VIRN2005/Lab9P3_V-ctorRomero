@@ -27,6 +27,9 @@
     <ClCompile Include="usuario_paypal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdministradoraArchivos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Wallet.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="usuario_paypal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdministradoraArchivos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

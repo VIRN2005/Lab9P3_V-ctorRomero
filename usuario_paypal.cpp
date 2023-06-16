@@ -1,5 +1,5 @@
 #include "usuario_paypal.h"
-#include "administradora_archivos.h"
+#include "AdministradoraArchivos.h"
 using namespace std;
 
 UsuarioPaypal::UsuarioPaypal(string nombreUsuario, string numeroIdentidad, string contrasena) {
@@ -36,7 +36,7 @@ void UsuarioPaypal::Depositar(float cantidad) {
 void UsuarioPaypal::Retirar(float cantidad) {
     if (saldo >= cantidad) {
         saldo -= cantidad;
-        string mensaje = "Se ha retirado " + to_string(cantidad) + " desde su wallet";
+        string mensaje = "Se ha retirado $" + to_string(cantidad) + " desde su wallet";
         historialCuenta.push_back(mensaje);
         GuardarEnArchivo();
         cout << "Retiro exitoso. Nuevo saldo: " << saldo << endl;
