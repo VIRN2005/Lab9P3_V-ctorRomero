@@ -56,21 +56,24 @@ void Wallet::ComprarCryptos() {
     cin >> monto;
 
     switch (opcion_Coin) {
-    case 1:
+    case 1: {
         precio = 0.6f;
         cryptocoin = "DogeCoin";
+    }
         break;
-    case 2:
+    case 2: {
         precio = 1000.0f;
         cryptocoin = "Etherium";
-        break;
-    case 3:
+    }
+          break;
+    case 3: {
         precio = 5.0f;
         cryptocoin = "WalterCoin";
-        break;
-    default:
+    }
+          break;
+    default: {
         cout << "Opción inválida de Bitcoin" << endl;
-        return;
+    }
     }
 
     float total = monto * precio;

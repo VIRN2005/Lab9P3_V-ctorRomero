@@ -78,6 +78,7 @@ void AdministradoraArchivos::CargarUsuariosPaypal(Paypal* paypal) {
     }
 }
 
+
 void AdministradoraArchivos::GuardarWallet(Wallet* wallet) {
     ofstream archivo("wallet.lab", ios::binary);
     if (archivo.is_open()) {

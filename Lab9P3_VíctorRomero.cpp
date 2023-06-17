@@ -78,14 +78,6 @@ void mostrarMenuWallet(Wallet* wallet) {
         }
     }
 }
-
-#include <iostream>
-#include "paypal.h"
-#include "wallet.h"
-#include "administradoraarchivos.h"
-
-using namespace std;
-
 void mostrarMenuPrincipal() {
     cout << "=== Menú Principal ===" << endl;
     cout << "1) Crear cuenta de PayPal" << endl;
@@ -185,6 +177,7 @@ void menuPrincipal() {
             }
             break;
         }
+
         case 5: {
             UsuarioPaypal* usuario = paypal.IniciarSesion();
             if (usuario != nullptr) {

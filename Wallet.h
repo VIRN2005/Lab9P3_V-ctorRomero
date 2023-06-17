@@ -23,7 +23,6 @@ public:
     float GetEtherium() const;
     float GetWalterCoin() const;
 
-
     void CrearWallet(Paypal* paypal);
     void AccederWallet(UsuarioPaypal* usuario);
     string GetNombreUsuario();
