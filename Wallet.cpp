@@ -2,6 +2,9 @@
 #include <iostream>
 using namespace std;
 
+Wallet::Wallet() {
+}
+
 Wallet::Wallet(string nombreUsuario, Paypal* paypal, string contrasena) {
     this->nombreUsuario = nombreUsuario;
     this->paypal = paypal;
@@ -9,6 +12,22 @@ Wallet::Wallet(string nombreUsuario, Paypal* paypal, string contrasena) {
     dogeCoin = 0.0f;
     etherium = 0.0f;
     walterCoin = 0.0f;
+}
+
+const string& Wallet::GetNombreUsuario() const {
+    return nombreUsuario;
+}
+
+float Wallet::GetDogeCoin() const {
+    return dogeCoin;
+}
+
+float Wallet::GetEtherium() const {
+    return etherium;
+}
+
+float Wallet::GetWalterCoin() const {
+    return walterCoin;
 }
 
 string Wallet::GetNombreUsuario() {
@@ -75,5 +94,19 @@ void Wallet::ComprarCryptos() {
     else {
         cout << "Saldo insuficiente en su cuenta de PayPal para realizar la compra, Intenta aumentar el saldo de la cuenta..." << endl;
     }
+}
+
+void Wallet::CrearWallet(Paypal* paypal) {
+    UsuarioPaypal* usuario = paypal->IniciarSesion();
+    if (usuario != nullptr) {
+        cout << "¡Wallet creado exitosamente!" << endl;
+    }
+    else {
+        cout << "Debe iniciar sesión en PayPal antes de crear un Wallet." << endl;
+    }
+}
+
+void Wallet::AccederWallet(UsuarioPaypal* usuario) {
+    cout << "Accediendo al Wallet del usuario: " << usuario->GetNombreUsuario() << endl;
 }
 

@@ -53,3 +53,52 @@ bool AdministradoraArchivos::ExisteUsuario(string nombreUsuario) {
     return false;
 }
 
+void AdministradoraArchivos::CargarInformacion(Paypal* paypal, Wallet* wallet) {
+    CargarUsuariosPaypal(paypal);
+    CargarWallet(wallet);
+}
+
+void AdministradoraArchivos::CargarUsuariosPaypal(Paypal* paypal) {
+    ifstream archivo;
+    archivo.open("usuarios.lab", ios::binary);
+    if (archivo) {
+        UsuarioPaypal* usuario = nullptr;
+        while (!archivo.eof()) {
+            usuario = new UsuarioPaypal();
+            archivo.read(reinterpret_cast<char*>(usuario), sizeof(UsuarioPaypal));
+            if (!archivo.eof()) {
+                paypal->AgregarUsuario(usuario);
+            }
+        }
+        archivo.close();
+        cout << "Información de usuarios de PayPal cargada exitosamente." << endl;
+    }
+    else {
+        cout << "No se pudo abrir el archivo de usuarios de PayPal." << endl;
+    }
+}
+
+void AdministradoraArchivos::GuardarWallet(Wallet* wallet) {
+    ofstream archivo("wallet.lab", ios::binary);
+    if (archivo.is_open()) {
+        archivo.write(reinterpret_cast<const char*>(wallet), sizeof(Wallet));
+        archivo.close();
+        cout << "Información del Wallet guardada exitosamente." << endl;
+    }
+    else {
+        cout << "No se pudo crear el archivo del Wallet." << endl;
+    }
+}
+
+void AdministradoraArchivos::CargarWallet(Wallet* wallet) {
+    ifstream archivo("wallet.lab", ios::binary);
+    if (archivo) {
+        archivo.read(reinterpret_cast<char*>(wallet), sizeof(Wallet));
+        archivo.close();
+        cout << "Información del Wallet cargada exitosamente." << endl;
+    }
+    else {
+        cout << "No se encontró el archivo del Wallet." << std::endl;
+    }
+}
+
